@@ -108,6 +108,12 @@ public class TestPlotSoftPatterns
             	(np. uruchomienie plotera w tym projekcie); trzeba natomiast w przypadku istnienia niekompatybilnych interfejsow
             	wykorzystywanych w projekcie.
             	*/
+            	
+            	/*
+            	3.3.3: Jesli mowiac o parametrach linii, mamy na mysli np. kolor czy grubosc, mozna utworzyc menu opcji wyboru koloru i grubosci,
+            	klase tworzaca linie o wybranych parametrach (np. CustomLine dziedziczaca z AbstractLine), a pozniej dodawac do kontekstu adapter, ktorego
+            	konstruktor przyjmuje jako drugi argument obiekt klasy CustomLine.
+            	*/
             }
 
         });
