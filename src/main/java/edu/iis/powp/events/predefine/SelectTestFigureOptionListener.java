@@ -9,10 +9,27 @@ import edu.iis.powp.app.DriverManager;
 
 public class SelectTestFigureOptionListener implements ActionListener
 {
-
+	public enum FigureScript {
+		_1, _2;
+	}
+	
+	private FigureScript figureScript;
+	
+	public SelectTestFigureOptionListener() {
+		this.figureScript = FigureScript._1; // domyslny konstruktor wyswietli pierwsza figure
+	}
+	
+	public SelectTestFigureOptionListener(FigureScript figureScript) {
+		this.figureScript = figureScript;
+	}
+	
     @Override
     public void actionPerformed(ActionEvent e)
-    {
-        FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    {	
+    	if (figureScript == FigureScript._1) {
+    		FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	} else {
+    		FiguresJoe.figureScript2(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	}
     }
 }
