@@ -5,8 +5,10 @@ import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import edu.iis.client.plottermagic.AbstractPlotter;
 import edu.iis.client.plottermagic.ClientPlotter;
 import edu.iis.client.plottermagic.IPlotter;
+import edu.iis.powp.adapter.AbstractPlotterAdapter;
 import edu.iis.powp.adapter.LinePlotterAdapter;
 import edu.iis.powp.adapter.PlotterAdapter;
 import edu.iis.powp.app.Application;
@@ -33,9 +35,10 @@ public class TestPlotSoftPatterns
 	private static void setupPresetTests(Context context) {
 	    SelectTestFigureOptionListener selectTestFigureOneOptionListener = new SelectTestFigureOptionListener(FigureScript._1);
 	    SelectTestFigureOptionListener selectTestFigureTwoOptionListener = new SelectTestFigureOptionListener(FigureScript._2);
-		
+	    SelectTestFigureOptionListener selectTestFigureThreeOptionListener = new SelectTestFigureOptionListener(FigureScript._3);
 		context.addTest("Figure Joe 1", selectTestFigureOneOptionListener);	 
 		context.addTest("Figure Joe 2", selectTestFigureTwoOptionListener);
+		context.addTest("Figure Jane", selectTestFigureThreeOptionListener);
 	}
 
 	/**
@@ -53,6 +56,9 @@ public class TestPlotSoftPatterns
 		
 		IPlotter linePlotter = new LinePlotterAdapter(ApplicationWithDrawer.getDrawPanelController(), LineFactory.getSpecialLine());
 		context.addDriver("Line Plotter Adapter", linePlotter);
+		
+		AbstractPlotter abstractPlotter = new AbstractPlotterAdapter(0, 0, ApplicationWithDrawer.getDrawPanelController());
+		context.addDriver("Abstract Plotter", abstractPlotter);
 
 		context.updateDriverInfo();
 	}
