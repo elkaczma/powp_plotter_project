@@ -97,6 +97,12 @@ public class TestPlotSoftPatterns
             	setupDrivers(context);
             	setupPresetTests(context);
             	setupLogger(context);
+            	
+            	/*
+            	3.2.5: Z adaptera klasy warto korzystac w celu przetestowania dzialania rzeczywistego rozwiazania, ktore jest niezwykle kosztowne
+            	(np. uruchomienie plotera w tym projekcie); trzeba natomiast w przypadku istnienia niekompatybilnych interfejsow
+            	wykorzystywanych w projekcie.
+            	*/
             }
 
         });
