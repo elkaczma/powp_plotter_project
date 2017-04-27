@@ -7,10 +7,15 @@ public class CommandDrawLineToPosition implements PlotterCommand {
 	private int x;
 	private int y;
 	
+	public CommandDrawLineToPosition(int x, int y) {
+		super();
+		this.x = x;
+		this.y = y;
+	}
+
 	@Override
 	public void execute(IPlotter plotter) {
-		// TODO Auto-generated method stub
-
+		plotter.drawTo(this.x, this.y);
 	}
 
 }
