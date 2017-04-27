@@ -8,6 +8,8 @@ import edu.iis.client.plottermagic.preset.FiguresJane;
 import edu.iis.client.plottermagic.preset.FiguresJoe;
 import edu.iis.powp.app.Application;
 import edu.iis.powp.app.DriverManager;
+import edu.iis.powp.command.ComplexCommand;
+import edu.iis.powp.factories.FigureFactory;
 
 public class SelectTestFigureOptionListener implements ActionListener
 {
@@ -34,6 +36,9 @@ public class SelectTestFigureOptionListener implements ActionListener
     		FiguresJoe.figureScript2(Application.getComponent(DriverManager.class).getCurrentPlotter());
     	} else if (figureScript == FigureScript._3) {
     		FiguresJane.figureScript((AbstractPlotter) Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	} else {
+    		ComplexCommand command = FigureFactory.drawRectangle(50, 50, 200, 100);
+    		command.execute(Application.getComponent(DriverManager.class).getCurrentPlotter());
     	}
     }
 }
