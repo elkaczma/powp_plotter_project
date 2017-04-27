@@ -19,5 +19,6 @@ public class ComplexCommand implements PlotterCommand {
 			command.execute(plotter);
 		}
 	}
-
+	
+	// 3.1.3: wzorzec Composite
 }
