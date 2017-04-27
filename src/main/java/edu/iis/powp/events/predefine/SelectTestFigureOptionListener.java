@@ -12,7 +12,7 @@ import edu.iis.powp.app.DriverManager;
 public class SelectTestFigureOptionListener implements ActionListener
 {
 	public enum FigureScript {
-		_1, _2, _3;
+		_1, _2, _3, _4;
 	}
 	
 	private FigureScript figureScript;
@@ -32,7 +32,7 @@ public class SelectTestFigureOptionListener implements ActionListener
     		FiguresJoe.figureScript1(Application.getComponent(DriverManager.class).getCurrentPlotter());
     	} else if (figureScript == FigureScript._2) {
     		FiguresJoe.figureScript2(Application.getComponent(DriverManager.class).getCurrentPlotter());
-    	} else {
+    	} else if (figureScript == FigureScript._3) {
     		FiguresJane.figureScript((AbstractPlotter) Application.getComponent(DriverManager.class).getCurrentPlotter());
     	}
     }
