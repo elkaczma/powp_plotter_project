@@ -22,4 +22,19 @@ public class FigureFactory {
 		return new ComplexCommand(commandsList);
 	}
 	
+public static ComplexCommand drawFigureJoe1(int startX, int startY, int side) {
+		
+		List<PlotterCommand> commandsList = new ArrayList<>();
+		commandsList.add(new CommandSetPosition(startX, startY));
+		commandsList.add(new CommandDrawLineToPosition(startX+side, startY));
+		commandsList.add(new CommandDrawLineToPosition(startX+side, startY+side));
+		commandsList.add(new CommandDrawLineToPosition(startX, startY+side));
+		commandsList.add(new CommandDrawLineToPosition(startX, startY));
+		commandsList.add(new CommandDrawLineToPosition(startX+side, startY+side));
+		commandsList.add(new CommandSetPosition(startX+side, startY));
+		commandsList.add(new CommandDrawLineToPosition(startX, startY+side));
+		
+		return new ComplexCommand(commandsList);
+	}
+	
 }

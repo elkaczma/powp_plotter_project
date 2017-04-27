@@ -14,7 +14,7 @@ import edu.iis.powp.factories.FigureFactory;
 public class SelectTestFigureOptionListener implements ActionListener
 {
 	public enum FigureScript {
-		_1, _2, _3, _4;
+		_1, _2, _3, _4, _5;
 	}
 	
 	private FigureScript figureScript;
@@ -36,8 +36,11 @@ public class SelectTestFigureOptionListener implements ActionListener
     		FiguresJoe.figureScript2(Application.getComponent(DriverManager.class).getCurrentPlotter());
     	} else if (figureScript == FigureScript._3) {
     		FiguresJane.figureScript((AbstractPlotter) Application.getComponent(DriverManager.class).getCurrentPlotter());
-    	} else {
+    	} else if (figureScript == FigureScript._4) {
     		ComplexCommand command = FigureFactory.drawRectangle(50, 50, 200, 100);
+    		command.execute(Application.getComponent(DriverManager.class).getCurrentPlotter());
+    	} else {
+    		ComplexCommand command = FigureFactory.drawFigureJoe1(-120, -120, 240);
     		command.execute(Application.getComponent(DriverManager.class).getCurrentPlotter());
     	}
     }
